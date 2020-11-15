@@ -71,7 +71,7 @@
         }else {
           alert(data.msg);
         }
-        console.log(data);
+        // console.log(data);
 
         // this.setUser({account:users.account,password:users.password});
         },

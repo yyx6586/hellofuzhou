@@ -9,13 +9,15 @@ const mutations = {
     state.password = users.password;
   },
 
+  //退出
   clearUser(state){
     state.account = "";
     state.password = "";
-    console.log(state.account);
-    console.log(state.password);
+    // console.log(state.account);
+    // console.log(state.password);
   },
 
+  //保存登录信息
   setMsg(state,response){
     state.msg = response.msg;
     state.account = response.data.userAccount;

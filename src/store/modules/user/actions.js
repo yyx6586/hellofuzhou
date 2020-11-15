@@ -7,12 +7,14 @@ const actions = {
     commit("setUser",data);
   },
 
+  //退出
   clearUser({commit,state}){
     commit("clearUser");
-    console.log(state.account);
-    console.log(state.password);
+    // console.log(state.account);
+    // console.log(state.password);
   },
 
+  //登录
   login({commit,state},data){
     return new Promise((resolve, reject) => {
 

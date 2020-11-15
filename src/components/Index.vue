@@ -115,7 +115,6 @@
     computed:{
       ...mapState({
         account: state => state.user.account,
-        password: state => state.user.password
       })
     },
     
@@ -140,8 +139,8 @@
 
       clearUsers:function () {
         this.clearUser();
-        console.log(state.account);
-        console.log(state.password);
+        // console.log(state.account);
+        // console.log(state.password);
 
         const vm = this;
         vm.$router.push({name:'Login'});
