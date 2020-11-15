@@ -1,0 +1,137 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul li{
+  list-style: none;
+}
+
+/*顶部，导航栏、轮播图、搜索框*/
+
+/*导航栏*/
+
+/*轮播图*/
+/*图片*/
+.carousel{
+  position: relative;
+  height: 386px;
+}
+
+.carousel_list{
+  position: absolute;
+  height: 386px;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.carousel_list img{
+  height: 386px;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+/*箭头*/
+
+.carousel .carousel-bar{
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  /*left: 50%;*/
+  margin-top: -30px;
+  /*margin: -30px 0 0 -30px;*/
+  font-size: 60px;
+  line-height: 1em;
+  color: #fff;
+  opacity: 0.75;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+
+#bar_left{
+  left: 10px;
+}
+
+#bar_right{
+  right: 10px;
+}
+
+.carousel .carousel-bar:hover{
+  opacity: 1;
+}
+
+/*记数*/
+.carousel_text{
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  right: 30px;
+  text-align: right;
+  color: #fff;
+}
+
+.carousel_text .num{
+  font-size: 24px;
+}
+
+.carousel_text .num i{
+  font-size: 48px;
+  font-style: normal;
+  font-family: HelveticaNeue-Thin,Helvetica,Avenir-light,Avenir Next,Arial;
+}
+
+.carousel_text .num em{
+  font-style: normal;
+}
+
+/*轮播图*/
+.carousel-inner{
+  position: relative;
+  height: 386px;
+}
+
+.item{
+  position: absolute;
+  height: 386px;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.carousel-inner .item img{
+  height: 386px;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.carousel-control{
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  /*left: 50%;*/
+  margin-top: -30px;
+  /*margin: -30px 0 0 -30px;*/
+  font-size: 60px;
+  line-height: 1em;
+  color: #fff;
+  opacity: 0.75;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+
+.left{
+  left: 10px;
+}
+
+.right{
+  right: 10px;
+}
+
+.carousel-control:hover{
+  opacity: 1;
+}

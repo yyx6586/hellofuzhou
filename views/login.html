@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+
+    <!--引入css-->
+    <link rel="stylesheet" href="../css/login.css"/>
+
+    <!--引入 qs.js-->
+    <script src="../node_modules/qs/dist/qs.js"></script>
+
+    <!-- 引入vue.js-->
+    <script src="../node_modules/vue/dist/vue.js"></script>
+
+    <!--引入 axios.js-->
+    <script src="../node_modules/axios/dist/axios.js"></script>
+
+
+</head>
+<body>
+    <img id="background_img" src="../pictures/login/login.jpg">
+    <div id="app">
+        <form @submit.prevent="submit1()" name="form">
+            <div id="opacity_div" class="user_div"></div>
+
+            <div class="user_div">
+                <span id="span_account" class="user_span">用户名:</span>
+                <input class="user_input" name="account" v-model="users.account">
+
+                <br>
+                <span id="span_password" class="user_span">密码:</span>
+                <input class="user_input" type="password" name="password" v-model="users.password">
+
+                <br>
+                <button id="login_btn"  class="btn" v-on:click="login()">登陆</button>
+
+                <button id="register_btn" class="btn">注册</button>
+            </div>
+
+        </form>
+    </div>
+<script type="text/javascript">
+    //定义一个Vue实例
+    new Vue({
+
+        el:"#app",
+        data:{
+            users:{}
+        },
+
+        methods: {
+            submit1: function () {
+                if (this.users.account == undefined) {
+                    alert("账号不能为空");
+                    return false;
+                }
+
+                if (this.users.password == undefined) {
+                    alert("密码不能为空")
+                    return false;
+                };
+
+                let paramsData = new URLSearchParams();
+                paramsData.append("account", this.users.account);
+                paramsData.append("password", this.users.password);
+
+                axios.post('http://127.0.0.1:8080/user/login',
+                    paramsData
+                //     {
+                //     params: {
+                //         account: this.users.account,
+                //         password: this.users.password
+                //     },
+                //         responseType:'json',
+                // }
+
+                    // this.$qs.stringify({
+                    //     account: this.users.account,
+                    //     password: this.users.password
+                    // })
+                ).then(function (response) {
+                    //response.data 返回值，下面是你要执行的代码
+                    console.log(response);
+                    console.log(response.data)
+
+                    alert(response.data.msg)
+                }.bind(this)).catch(function (error) {
+                    console.log(error)
+                })
+            },
+
+            login: function () {
+                console.log(this.users);
+                console.log(this.users.name);
+            }
+        }
+        });
+</script>
+</body>
+</html>

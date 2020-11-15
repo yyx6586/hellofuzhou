@@ -1,0 +1,392 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: #c4e8ff;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul,li{
+  list-style: none;
+}
+
+/*导航*/
+#navigation{
+  height: 70px;
+  width: 100%;
+  background-color: #002b49;
+  text-align: center;
+}
+
+.navigation_ul{
+  display: inline-block;    /*让 ul 变成块状元素*/
+  padding-left: 0;        /*去掉黑点所占有的位置*/
+}
+
+.navigation_ul_li{
+  display: inline-block;    /*让 li 都在一行*/
+  margin: 0 40px;           /*每个li距离左右两边的距离*/
+  text-align: center;       /*文本内容居中 text-align 与 line-height*/
+  line-height:70px;
+}
+
+.navigation_ul_li_a{
+  height: 70px;             /*设置每个 li 的宽高*/
+  font-size: 20px;                     /*字体大小*/
+  color: white;                        /*字体颜色*/
+  padding: 21px 13px;          /*文本内容距离左右的距离*/
+}
+
+.navigation_ul_li_a:hover{
+  background-color: dodgerblue;
+}
+
+/*顶部图片*/
+#main_pic{
+  position: relative;
+  height: 340px;
+}
+
+.main_pic_img{
+  height: 340px;
+  width: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.main_pic_span{
+  display: block;               /*转换成块状元素*/
+  position: absolute;           /*相对于父级 div 绝对定位*/
+  top: 30px;
+  right: 30px;
+  font-size: 56px;
+  font-family: "Microsoft YaHei", 'Arial Black';
+  color: #fff;
+  text-shadow: 2px 2px 5px #333;      /*设置文本阴影效果*/
+  cursor: default;
+}
+
+/*第三部分*/
+#main_content{
+  position: absolute;
+  width: 1230px;
+  height: 780px;
+  margin-top: 20px;
+  overflow: hidden;             /*超出的部分隐藏*/
+  left: 50%;
+  margin-left: -615px;
+}
+/*旅游导航*/
+.main_content_menu{
+  display: inline-block;
+  width: 220px;
+  height: 320px;
+  float: left;
+  background-color: #00416c;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.main_content_menu_h2{
+  font-size: 18px;
+  font-family: "Microsoft YaHei",Arial;
+  font-weight: bold;
+  color: #7dc7fa;
+  line-height: 60px;            /*设置文字的行高*/
+  padding-left: 10px;
+  margin: 0 10px 0 10px;
+  border-bottom: 1px solid #21638e;     /*添加下划线*/
+}
+
+.main_content_menu_ul{
+  font-size: 16px;
+  margin-left: 33px;
+  margin-top: 8px;
+  line-height: 33px;
+}
+
+.main_content_menu_ul_li{
+  padding: 3px 0;
+}
+
+.main_content_menu_ul_li_img{
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+.main_content_menu_ul_li_a{
+  color: #fff;
+}
+
+/*轮播图*/
+.main_content_pic{
+  display: inline-block;
+  float: left;
+  width: 690px;
+  height: 320px;
+  background: white;
+}
+
+/*最新资讯*/
+.main_content_news{
+  display: inline-block;
+  float: right;
+  width: 290px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.news_h2{
+  height: 36px;
+  line-height: 36px;
+  font-size: 18px;
+  color: #111111;
+  font-weight: 700;
+  font-family:  "Microsoft YaHei", HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  border-bottom: 3px solid #a4d7f5;
+}
+
+.news_h2_span_title{
+  position: absolute;
+  top: 0;
+  line-height: 36px;
+  border-bottom: 3px solid #1d7aae;
+}
+
+.news_h2_span_more{
+  float: right;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: right;
+  font-style: italic;
+}
+
+.news_h2_span_more_a{
+  color: #333;
+}
+
+.news_book{
+  margin-top: 10px;
+  width: 288px;
+  height: 269px;
+  background-color: #fff;
+  border: 1px solid #a9d9f8;
+}
+
+.news_book_ul{
+  margin-top: 10px;
+  margin-left: 10px;
+  line-height: 25px;
+  list-style: disc;
+}
+
+.news_book_ul_li{
+  padding: 5px 0 5px 10px;
+  width: 260px;
+  height: 25px;
+  overflow: hidden;
+  white-space: nowrap;        /*规定段落中的文本不进行换行*/
+  text-overflow: ellipsis;    /*文本溢出包含元素时发生的事情,显示省略符号来代表被修剪的文本*/
+  background: url("../pictures/index/news_book_ul_li.png") 0 center no-repeat;
+  background-size: 17px 20px;
+}
+
+.news_book_ul_li_a{
+  margin-left: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/*精品路线*/
+.main_content_route{
+  float: left;
+  margin-top: 10px;
+  width: 920px;
+  height: 428px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/*标题*/
+.route_h2{
+  padding-left: 20px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #0062a5;
+  font-family: "Microsoft YaHei", HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.route_h2_a{
+  display: block;
+  float: right;
+  margin-top: 16px;
+  margin-right: 40px;
+  padding: 2px 10px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.tag1{
+  background: #ffdf5e;
+  color: #6e5800;
+}
+
+.tag2{
+  background: #60bdfe;
+  color: #003152;
+}
+
+.tag3{
+  background: #9ce280;
+  color: #164d00;
+}
+
+.tag4{
+  background: #fea7ca;
+  color: #902d54;
+}
+
+.route_h2_more{
+  float: right;
+  margin-left: 80px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: right;
+  font-style: italic;
+}
+
+.route_h2_more_a{
+  padding-right: 20px;
+  color: #fff;
+}
+
+/*团队旅游左边部分*/
+.team_left{
+  float: left;
+  width: 287px;
+  height: 368px;
+}
+
+.team_left a{
+  color: #333;
+  cursor: pointer;
+}
+
+.team_left .title{
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 257px;
+  height: 126px;
+  background-color: #d1e7f4;
+}
+
+.team_left .title h3{
+  padding: 10px 0px 0px 0px;
+  width: 260px;
+  height: 40px;
+  color: #333;
+  font-weight: 700;
+  overflow: hidden;
+  line-height: 1.3;
+  font-family: "Microsoft YaHei", HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.team_left .title h3 em{
+  font-family: Arial;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0061a4;
+  font-style: italic;
+  margin-right: 8px;
+}
+
+.team_left .title span{
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.team_left .pic{
+  position: relative;
+  width: 287px;
+  height: 242px;
+}
+
+.team_left .pic img{
+  width: 287px;
+  height: 242px;
+}
+
+/*团队旅游右边部分*/
+.team_right{
+  float: right;
+  width: 633px;
+  height: 368px;
+}
+
+.team_right ul{
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.team_right ul li{
+  margin-top: 6px;
+  padding-bottom: 10px;
+  width: 595px;
+  border-bottom: 1px dotted #cbcbcb;
+}
+
+.team_right ul li a{
+  color: #333;
+  cursor: pointer;
+}
+
+.team_right ul li a img{
+  float: left;
+  width: 160px;
+  height: 100px;
+}
+
+.team_right .title{
+  display: block;
+  padding-left: 15px;
+  width: 420px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.team_right .title h3{
+  font-size: 16px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #454545;
+  font-family: "Microsoft YaHei", HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.team_right .title h3 em{
+  font-family: Arial;
+  font-size: 32px;
+  font-weight: 700;
+  color: #54a7e3;
+  font-style: italic;
+  margin-right: 8px;
+}
+
+.team_right .title span{
+  font-size: 12px;
+  line-height: 18px;
+  color: #737373;
+}
