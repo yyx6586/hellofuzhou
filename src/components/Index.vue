@@ -56,9 +56,9 @@
             <div class="carousel-item" :class="0===index?'active':''" v-for="(item,index) in imgList">
               <img :src="item.src" alt="..." style="height: 386px; width: 100%; overflow: hidden">
               <div class="carousel-caption d-none d-md-block" style="bottom: 10px;right:35px;">
-                <h4 style="position: absolute;bottom: 0;right:0;">
+                <h3 style="position: absolute;bottom: 0;right:0;">
                   <span style="font-size: 40px;font-style:italic">{{index+1}}</span>/{{imgList.length}}
-                </h4>
+                </h3>
               </div>
             </div>
           </div>
@@ -77,16 +77,101 @@
       <!--轮播图 end-->
 
       <!--搜索框-->
-      <div id="search">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="搜索景点" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">搜索一下</span>
-        </div>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="搜索景点" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">搜索一下</span>
       </div>
       <!--搜索框 end-->
     </div>
     <!--header end-->
 
+    <div style="margin:326px 0 0 0 ;padding: 0px; width: 0px; height: 0px; clear: both"></div>
+
+    <!--热门景点-->
+    <div id="site">
+      <!--标题-->
+      <div>
+        <span>热门景点</span>
+      </div>
+
+      <!--景点推荐-->
+      <div>
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <img src="/wp-content/uploads/2014/06/kittens.jpg"
+                   alt="通用的占位符缩略图">
+              <div class="caption">
+                <h3>缩略图标签</h3>
+                <p>一些示例文本。一些示例文本。</p>
+                <p>
+                  <a href="#" class="btn btn-primary" role="button">
+                    按钮
+                  </a>
+                  <a href="#" class="btn btn-default" role="button">
+                    按钮
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <img src="/wp-content/uploads/2014/06/kittens.jpg"
+                   alt="通用的占位符缩略图">
+              <div class="caption">
+                <h3>缩略图标签</h3>
+                <p>一些示例文本。一些示例文本。</p>
+                <p>
+                  <a href="#" class="btn btn-primary" role="button">
+                    按钮
+                  </a>
+                  <a href="#" class="btn btn-default" role="button">
+                    按钮
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <img src="/wp-content/uploads/2014/06/kittens.jpg"
+                   alt="通用的占位符缩略图">
+              <div class="caption">
+                <h3>缩略图标签</h3>
+                <p>一些示例文本。一些示例文本。</p>
+                <p>
+                  <a href="#" class="btn btn-primary" role="button">
+                    按钮
+                  </a>
+                  <a href="#" class="btn btn-default" role="button">
+                    按钮
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <img src="/wp-content/uploads/2014/06/kittens.jpg"
+                   alt="通用的占位符缩略图">
+              <div class="caption">
+                <h3>缩略图标签</h3>
+                <p>一些示例文本。一些示例文本。</p>
+                <p>
+                  <a href="#" class="btn btn-primary" role="button">
+                    按钮
+                  </a>
+                  <a href="#" class="btn btn-default" role="button">
+                    按钮
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -168,32 +253,28 @@
     font-weight: 700;
   }
 
-  /*搜索框*/
-  #search{
+  .input-group input{
     z-index: 200;
     position: absolute;
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
     margin-top: 150px;
     margin-left: 480px;
   }
 
-  #search input{
-    width: 350px;
-    height: 50px;
-    margin: 0;
-    font-size: 20px;
-    /*border-right: 0px;*/
-  }
-
-  #search span{
+  .input-group span{
+    z-index: 200;
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 830px;
     line-height: 50px;
-    margin: 0;
     padding: 0px;
     height: 50px;
     width: 100px;
     text-align: center;
     font-size: 20px;
     color: white;
-    /*border: 1px solid white;*/
     border: 0px;
     background-color: #8adbff;
     border-bottom-right-radius: 8%;

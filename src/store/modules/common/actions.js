@@ -8,9 +8,13 @@ import qs from "qs";
 
 const actions ={
 
-  get({commit,state},api, params){
+  get({commit,state},a){
+    {
+      api:"";
+      params:{}
+    }
     return new Promise((resolve, reject) =>{
-      axios.get(state.baseURL + api, {
+      axios.get(state.baseURL + a.api, {
         params: params
       })
         .then(res => {
