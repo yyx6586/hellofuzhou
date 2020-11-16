@@ -88,96 +88,59 @@
     <div style="margin:326px 0 0 0 ;padding: 0px; width: 0px; height: 0px; clear: both"></div>
 
     <!--热门景点-->
-    <div id="site">
+    <div id="site" style="background-color: #f5f5f5; height: 560px">
       <!--标题-->
-      <div>
-        <span>热门景点</span>
+      <div class="title">
+        <h2>热门推荐</h2>
       </div>
+      <!--标题 end-->
 
       <!--景点推荐-->
-      <div>
-        <div class="row">
-          <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <img src="/wp-content/uploads/2014/06/kittens.jpg"
-                   alt="通用的占位符缩略图">
-              <div class="caption">
-                <h3>缩略图标签</h3>
-                <p>一些示例文本。一些示例文本。</p>
-                <p>
-                  <a href="#" class="btn btn-primary" role="button">
-                    按钮
-                  </a>
-                  <a href="#" class="btn btn-default" role="button">
-                    按钮
-                  </a>
-                </p>
-              </div>
+      <div class="site-out">
+        <div class="thumbnail">
+          <a class="img-a" href="#" role="button" v-for="(item,index) in siteImg">
+            <img :src="item.src">
+            <div style="height: 30px; margin-top: -10px">
+              <a href="#" role="button" style="height: 30px; margin-bottom: 20px">
+                <p style="height: 30px">{{item.text}}</p>
+              </a>
             </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <img src="/wp-content/uploads/2014/06/kittens.jpg"
-                   alt="通用的占位符缩略图">
-              <div class="caption">
-                <h3>缩略图标签</h3>
-                <p>一些示例文本。一些示例文本。</p>
-                <p>
-                  <a href="#" class="btn btn-primary" role="button">
-                    按钮
-                  </a>
-                  <a href="#" class="btn btn-default" role="button">
-                    按钮
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <img src="/wp-content/uploads/2014/06/kittens.jpg"
-                   alt="通用的占位符缩略图">
-              <div class="caption">
-                <h3>缩略图标签</h3>
-                <p>一些示例文本。一些示例文本。</p>
-                <p>
-                  <a href="#" class="btn btn-primary" role="button">
-                    按钮
-                  </a>
-                  <a href="#" class="btn btn-default" role="button">
-                    按钮
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <img src="/wp-content/uploads/2014/06/kittens.jpg"
-                   alt="通用的占位符缩略图">
-              <div class="caption">
-                <h3>缩略图标签</h3>
-                <p>一些示例文本。一些示例文本。</p>
-                <p>
-                  <a href="#" class="btn btn-primary" role="button">
-                    按钮
-                  </a>
-                  <a href="#" class="btn btn-default" role="button">
-                    按钮
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
+          </a>
         </div>
       </div>
+      <!--景点推荐 end-->
     </div>
+    <!--热门景点 end-->
+
+    <!--游记攻略-->
+    <div id="itinerary" style="margin-bottom: 100px">
+      <!--标题-->
+      <div class="title" style="padding-top: 30px">
+        <h2>—————&nbsp;&nbsp;游记攻略&nbsp;&nbsp;—————</h2>
+        <div style="font-size: 18px; font-style: italic; text-align: center;">独行或同游，聪明的人与你在一起</div>
+        <div style="font-size: 23px; padding-top: 20px; padding-bottom: 20px; text-align: center; font-style: italic; font-weight: 500">
+          <a href="#" style="color: #1d7aae; text-decoration: none">MORE >></a>
+        </div>
+      </div>
+      <!--标题 end-->
+
+      <!--图片-->
+      <div v-for="(item,index) in itineraryImg" style="display: inline-block">
+        <img :src="item.src" class="img-circle" style="border-radius:50%; height: 270px; width: 270px; margin: 5px 15px 0px 15px">
+      </div>
+      <!--图片 end-->
+    </div>
+    <!--游记攻略 end-->
+
+    <!--底部，著作权-->
+    <div id="footer" style="background-color: #282828; height: 300px; width: 100%">
+    </div>
+    <!--底部，著作权 end-->
   </div>
 </template>
 
 <script>
   import {mapState,mapMutations,mapActions} from 'vuex'
-  import state from "../store/modules/common/state";
 
   export default {
     name: "Index.vue",
@@ -190,9 +153,22 @@
           {text:"3333",src:require("../assets/index/main_pic.jpg")},
         ],
 
-        isLogin:[
-          {text:"登录"},
-          {text:"你好，"}
+        siteImg:[
+          {text:"1111",src:require("../assets/index/1.jpg")},
+          {text:"2222",src:require("../assets/index/main_pic.jpg")},
+          {text:"3333",src:require("../assets/index/main_pic.jpg")},
+          {text:"4444",src:require("../assets/index/1.jpg")},
+          {text:"1111",src:require("../assets/index/1.jpg")},
+          {text:"2222",src:require("../assets/index/main_pic.jpg")},
+          {text:"3333",src:require("../assets/index/main_pic.jpg")},
+          {text:"4444",src:require("../assets/index/1.jpg")}
+        ],
+
+        itineraryImg:[
+          {text:"1111",src:require("../assets/index/1.jpg")},
+          {text:"2222",src:require("../assets/index/main_pic.jpg")},
+          {text:"3333",src:require("../assets/index/main_pic.jpg")},
+          {text:"4444",src:require("../assets/index/1.jpg")}
         ]
       }
     },
@@ -279,5 +255,60 @@
     background-color: #8adbff;
     border-bottom-right-radius: 8%;
     border-top-right-radius: 8%;
+  }
+
+  /*景点推荐*/
+
+  #site .title{
+    height: 74px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  #site h2{
+    color: #636363;
+  }
+
+  #site img{
+    width: 275px;
+    height: 185px;
+    margin-bottom: 20px;
+  }
+
+  #site a{
+    display: inline-block;
+    margin: 0px 8px 0px 8px;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /*#site .img-a{*/
+    /*border: 1px solid brown;*/
+  /*}*/
+
+  /*#site .img-a:hover{*/
+    /*border: 1px solid bisque;*/
+  /*}*/
+
+  #site a:hover{
+    color: #7dc7fa;
+  }
+
+  #site p{
+    overflow:hidden;
+    text-overflow:ellipsis; /* 加省略号 */
+    white-space:nowrap; /* 强制不换行 */
+  }
+
+  #site .thumbnail{
+    width: 100%;
+    height: 300px;
+    padding-top: 0px;
+  }
+
+  #site .site-out{
+    margin: 5px 20px 5px 20px;
   }
 </style>

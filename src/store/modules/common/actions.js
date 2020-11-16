@@ -14,9 +14,7 @@ const actions ={
       params:{}
     }
     return new Promise((resolve, reject) =>{
-      axios.get(state.baseURL + a.api, {
-        params: params
-      })
+      axios.get(state.baseURL + a.api, a.params)
         .then(res => {
           resolve(res.data);
           console.log(res.data);
