@@ -13,6 +13,7 @@ const mutations = {
   clearUser(state){
     state.account = "";
     state.password = "";
+    state.role = "";
     // console.log(state.account);
     // console.log(state.password);
   },
@@ -22,6 +23,7 @@ const mutations = {
     state.msg = response.msg;
     state.account = response.data.userAccount;
     state.password = response.data.userPassword;
+    state.role = response.data.userRole;
 
     // console.log(state.account);
     // console.log(state.password);

@@ -7,6 +7,13 @@ const state = {
 
   //注册
   registerApi:"/user/register",
+
+  //旅游资讯
+  newsApi:"/news/newsList",
+
+  //旅游资讯正文
+  newsDetailsApi:"/news/newsDetail",
+
 }
 
 export default state;

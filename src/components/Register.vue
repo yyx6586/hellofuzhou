@@ -36,7 +36,7 @@
 </template>
 
 <script>
-  import {isPhoneNumber} from "../utils/phone";
+  import {isPhoneNumber, isByteLength} from "../utils/stringUtils";
   import {mapState,mapActions} from "vuex";
   import state from "../store/modules/common/state";
 
@@ -73,6 +73,11 @@
 
         if(this.users.password == undefined){
           alert("密码不能为空")
+          return;
+        }
+
+        if(isByteLength(this.users.password)){
+          alert("密码为6到8位");
           return;
         }
 

@@ -3,28 +3,19 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-// import state from './state'
 import getters from './getters'
 import mutations from './mutations'
 import actions from './actions'
 
 const state = {
-
-  //登录
-
-  loginApi:"/user/login",
-  account:"",
-  password:"",
-  role:"",
-  code:"",         //登录成功返回为 1
-  msg:"",          //登录成功返回来的信息
-
+  newsApi:"/news/newsList",
+  newsList:""      //旅游资讯
 }
 
 export default {
-  namespaced: true,
+  namespaced:true,
   state,
   getters,
   mutations,
   actions
-};
+}

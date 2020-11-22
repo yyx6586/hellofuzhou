@@ -9,7 +9,9 @@
             <a class="nav-link" href="#" style="font-size: 25px">你好,福州</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 22px">资讯</a>
+            <router-link :to="{name:'News'}" style="text-decoration: none">
+              <a class="nav-link" href="#" style="font-size: 22px">资讯</a>
+            </router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" style="font-size: 22px">酒店</a>
@@ -35,14 +37,29 @@
         <!--右边的导航-->
         <ul class="nav" style="width: 230px; float: right">
           <li class="nav-item" style="text-align: center">
-            <a class="nav-link" href="#" v-if="account" style="font-size: 22px">{{account}}</a>
-            <a class="nav-link" href="#" v-if="!account" style="font-size: 22px" @click="goLoginVue()">登录</a>
+            <router-link style="text-decoration: none" :to="{name:'PersonalAdmin'}">
+              <a class="nav-link" href="#" v-if="account && role == 1" style="font-size: 22px">{{account}}</a>
+            </router-link>
+
+            <router-link style="text-decoration: none" :to="{name:'PersonalUser'}">
+              <a class="nav-link" href="#" v-if="account && role == 2" style="font-size: 22px">{{account}}</a>
+            </router-link>
+
+            <!--<a class="nav-link" href="#" v-if="account" style="font-size: 22px" @click="goPersonalVue()">{{account}}</a>-->
+
+
+            <router-link style="text-decoration: none" :to="{name:'Login'}">
+              <a class="nav-link" href="#" v-if="!account" style="font-size: 22px">登录</a>
+            </router-link>
           </li>
           <li class="nav-item">
             <span style="font-size: 22px; color: white; width: 76px; height: 49px; line-height: 49px; text-align: center">/</span>
           </li>
           <li class="nav-item" style="text-align: center">
-            <a class="nav-link" href="#" v-if="!account" style="font-size: 22px" @click="goRegisterVue()">注册</a>
+            <router-link :to="{name:'Register'}" style="text-decoration: none">
+              <a class="nav-link" href="#" v-if="!account" style="font-size: 22px">注册</a>
+            </router-link>
+
             <a class="nav-link" href="#" v-if="account" style="font-size: 22px" @click="clearUsers()">退出</a>
           </li>
         </ul>
@@ -115,7 +132,7 @@
     <!--游记攻略-->
     <div id="itinerary" style="margin-bottom: 100px">
       <!--标题-->
-      <div class="title" style="padding-top: 30px">
+      <div class="title" style="padding-top: 50px">
         <h2>—————&nbsp;&nbsp;游记攻略&nbsp;&nbsp;—————</h2>
         <div style="font-size: 18px; font-style: italic; text-align: center;">独行或同游，聪明的人与你在一起</div>
         <div style="font-size: 23px; padding-top: 20px; padding-bottom: 20px; text-align: center; font-style: italic; font-weight: 500">
@@ -176,6 +193,7 @@
     computed:{
       ...mapState({
         account: state => state.user.account,
+        role:state => state.user.role,                   //获取账户角色
       })
     },
     
@@ -188,24 +206,30 @@
         clearUser:'user/clearUser'
       }),
 
-      goLoginVue:function () {
-        const vm = this;
-        vm.$router.push({name:'Login'});
-      },
+      // //跳转到登录界面
+      // goLoginVue:function () {
+      //   const vm = this;
+      //   vm.$router.push({name:'Login'});
+      // },
 
-      goRegisterVue:function () {
-        const vm = this;
-        vm.$router.push({name:'Register'});
-      },
+      // //跳转到注册界面
+      // goRegisterVue:function () {
+      //   const vm = this;
+      //   vm.$router.push({name:'Register'});
+      // },
 
+      //实现退出功能，清除用户信息，跳转到登录界面
       clearUsers:function () {
         this.clearUser();
-        // console.log(state.account);
-        // console.log(state.password);
-
         const vm = this;
         vm.$router.push({name:'Login'});
-      }
+      },
+
+      // //跳转到新闻资讯界面
+      // goNewsVue:function () {
+      //   const vm = this;
+      //   vm.$router.push({name:'News'});
+      // }
     }
   }
 </script>

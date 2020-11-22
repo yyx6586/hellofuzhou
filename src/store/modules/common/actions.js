@@ -8,6 +8,8 @@ import qs from "qs";
 
 const actions ={
 
+  //需要传参数
+
   get({commit,state},a){
     {
       api:"";
@@ -39,12 +41,43 @@ const actions ={
            console.log(a);
          })
          .catch(err => {
-           reject(err.data)
+           reject(err.data);
            console.log(err);
          })
      });
-   }
+   },
 
+
+   //不需要传参数
+
+  getNo({commit,state}, api){
+    return new Promise((resolve, reject) => {
+      axios.get(state.baseURL + api)
+        .then(res => {
+          resolve(res.data);
+          console.log(res.data);
+        })
+        .catch(err => {
+          reject(err.data);
+          console.log(err);
+        })
+    })
+  },
+
+
+  postNo({commit,state}, api){
+    return new Promise((resolve, reject) => {
+      axios.post(state.baseURL + api)
+        .then(res => {
+          resolve(res.data);
+          console.log(res.data);
+        })
+        .catch(err => {
+          reject(err.data);
+          console.log(err);
+        })
+    })
+  }
 }
 
 export default actions;

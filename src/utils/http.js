@@ -60,4 +60,31 @@ export function post(url, params) {
   });
 }
 
+//不需要参数
+
+export function getNo(url) {
+  return new Promise((resolve, reject) => {
+    instance.get(url)
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(err => {
+        reject(err.data);
+      })
+  })
+}
+
+
+export function postNo(url) {
+  return new Promise((resolve, reject) => {
+    instance.post(url)
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(err => {
+        reject(err.data);
+      })
+  })
+}
+
 export default instance;
