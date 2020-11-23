@@ -60,6 +60,45 @@ export function post(url, params) {
   });
 }
 
+export function postParam(url, data = {}) {
+  return new Promise((resolve, reject) => {
+    instance({
+        url: url,
+        method: 'post',
+        data: data,
+      }
+    )
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(err => {
+        reject(err.data)
+      })
+  });
+}
+
+//携带请求头
+
+export function postHeader(url, data = {}, headers = {}) {
+  return new Promise((resolve, reject) => {
+    instance({
+        url: url,
+        method: 'post',
+        data: data,
+        headers: headers,//设置header信息
+      }
+    )
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(err => {
+        reject(err.data)
+      })
+  });
+}
+
+
+
 //不需要参数
 
 export function getNo(url) {

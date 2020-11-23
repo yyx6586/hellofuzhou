@@ -47,6 +47,24 @@ const actions ={
      });
    },
 
+  postParams({commit,state},a){
+    {
+      api:"";
+      params:{}
+    }
+    return new Promise((resolve, reject) => {
+      axios.post(state.baseURL + a.api, a.params)
+        .then(res => {
+          resolve(res.data);
+          console.log(res.data);
+          console.log(a);
+        })
+        .catch(err => {
+          reject(err.data);
+          console.log(err);
+        })
+    });
+  },
 
    //不需要传参数
 
